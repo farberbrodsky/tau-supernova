@@ -12,5 +12,5 @@ python3 script.py --upload /path/to/folder
 # Connect to Nova and upload current folder. It uploads to a folder of the same name.
 python3 script.py --upload .
 # Connect to Nova and upload multiple folders.
-python3 script.py --upload /path/to/thing /path/to/other/thing
+python3 script.py --upload /path/to/thing /path/to/other/stuff
 ```
