@@ -26,7 +26,7 @@ else:
 my_parser = argparse.ArgumentParser(
         description="My CLI to upload folders and get shell in nova.cs.tau.ac.il"
 )
-my_parser.add_argument("--upload", type=Path, help="Uploads this before connecting")
+my_parser.add_argument("--upload", type=Path, help="Uploads this before connecting", nargs="*")
 args = my_parser.parse_args()
 
 # Connect to gate
@@ -44,8 +44,8 @@ while not tunnel_line.startswith(b"Welcome"):
         print("tunneling log:", tunnel_line)
 print("Tunneling connected on port", TUNNELING_PORT)
 
-if args.upload:
-    upload = args.upload.resolve()
+for upload in args.upload or []:
+    upload = upload.resolve()  # if we say . it should get the real folder name
     # copy files to Nova
     print(subprocess.run(
             ["pscp", "-pw", auth_data['password'],
