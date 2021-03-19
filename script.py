@@ -45,12 +45,13 @@ while not tunnel_line.startswith(b"Welcome"):
 print("Tunneling connected on port", TUNNELING_PORT)
 
 if args.upload:
+    upload = args.upload.resolve()
     # copy files to Nova
     print(subprocess.run(
             ["pscp", "-pw", auth_data['password'],
              "-hostkey", "b5:ee:e3:25:dd:35:94:c4:c1:98:f0:16:e9:3a:42:f8",
              "-scp", "-r", "-P", TUNNELING_PORT,
-             args.upload, auth_data["username"] + "@localhost:" + args.upload.parts[-1]], check=True))
+             upload, auth_data["username"] + "@localhost:" + upload.parts[-1]], check=True))
 # connect to Nova
 os.system(f"plink -pw {auth_data['password']} -hostkey b5:ee:e3:25:dd:35:94:c4:c1:98:f0:16:e9:3a:42:f8 -ssh -P {TUNNELING_PORT} {auth_data['username']}@localhost")
 tunnel_proc.kill()
