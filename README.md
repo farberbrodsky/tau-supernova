@@ -9,4 +9,6 @@ Usage:
 python3 script.py
 # Connect to Nova and upload
 python3 script.py --upload /path/to/folder
+# Connect to Nova and upload current folder. It uploads to a folder of the same name.
+python3 script.py --upload .
 ```
