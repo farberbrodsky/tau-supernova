@@ -13,6 +13,8 @@ python3 script.py --upload /path/to/folder
 python3 script.py --upload .
 # Connect to Nova and upload multiple folders.
 python3 script.py --upload /path/to/thing /path/to/other/stuff
-# Connect to Nova to run the automated testing script test.py
+# Connect to Nova to run the script test.py
 python3 script.py --script test.py
+# Upload your homework and run the test for hw2
+python3 script.py --upload /home/misha/git/hw2-farberbrodsky/ --test hw2
 ```
