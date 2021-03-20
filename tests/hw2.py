@@ -85,8 +85,24 @@ assert_eq(
 )
 
 print("Running Assigment02Q03 tests...")
-# TODO add
+
+assert_eq(
+    "official example 20",
+    subprocess.check_output(
+        ["java", "il.ac.tau.cs.sw1.ex2.Assignment02Q03",
+         "20"],
+        cwd=src_dir),
+    b"The first 20 Fibonacci numbers are:\n1 1 2 3 5 8 13 21 34 55 89 144 233 377 610 987 1597 2584 4181 6765\nThe number of even numbers is: 6\n"
+)
+
+assert_eq(
+    "official example 10",
+    subprocess.check_output(
+        ["java", "il.ac.tau.cs.sw1.ex2.Assignment02Q03",
+         "10"],
+        cwd=src_dir),
+    b"The first 10 Fibonacci numbers are:\n1 1 2 3 5 8 13 21 34 55\nThe number of even numbers is: 3\n"
+)
+
 print("Running Assigment02Q04 tests...")
-# TODO add
 print("Running Assigment02Q05 tests...")
-# TODO add
