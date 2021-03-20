@@ -76,7 +76,8 @@ if args.test:
     # shortcut for setting the test to something from the tests directory
     test_path = Path(__file__).parent / "tests" / (args.test + ".py")
     if not test_path.is_file():
-        print("Not a valid test!")
+        print("Not a valid test! Choose from", ", ".join(x.parts[-1].split(".")[0]
+              for x in (Path(__file__).parent / "tests").iterdir()) + ".")
         sys.exit(1)
     script_arg = test_path
 if script_arg:
