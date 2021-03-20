@@ -105,4 +105,32 @@ assert_eq(
 )
 
 print("Running Assigment02Q04 tests...")
+
+assert_eq(
+    "corect output",
+    subprocess.check_output(
+        ["java", "il.ac.tau.cs.sw1.ex2.Assignment02Q04"],
+        cwd=src_dir),
+    b"[2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71]\n"
+)
+
 print("Running Assigment02Q05 tests...")
+
+assert_eq(
+    "official example 1",
+    subprocess.check_output(
+        ["java", "il.ac.tau.cs.sw1.ex2.Assignment02Q05"] +
+        "3 1 2 3 4 5 6 7 8 9".split(),
+        cwd=src_dir),
+    b"[1, 2, 3]\n[4, 5, 6]\n[7, 8, 9]\n\n[7, 4, 1]\n[8, 5, 2]\n[9, 6, 3]\n"
+)
+
+assert_eq(
+    "official example 2",
+    subprocess.check_output(
+        ["java", "il.ac.tau.cs.sw1.ex2.Assignment02Q05"] +
+        "4 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16".split(),
+        cwd=src_dir),
+    b"[1, 2, 3, 4]\n[5, 6, 7, 8]\n[9, 10, 11, 12]\n[13, 14, 15, 16]\n\n[13, 9, 5, 1]\n[14, 10, 6, 2]\n[15, 11, 7, 3]\n[16, 12, 8, 4]\n"
+)
+
