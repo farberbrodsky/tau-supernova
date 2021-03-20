@@ -78,9 +78,9 @@ if args.script:
     script_proc.wait()
     print(script_proc.stdout.read().decode("utf-8"))
     if script_proc.returncode == 0:
-        print("\033[32mSuccess!\033[37m", end="")
+        print("\033[32mSuccess!\033[m", end="")
     else:
-        print("\033[31mERROR!\033[37m", end="")
+        print("\033[31mERROR!\033[m", end="")
 else:
     os.system(conn_command)
 tunnel_proc.kill()
