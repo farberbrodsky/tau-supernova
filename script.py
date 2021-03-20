@@ -50,8 +50,6 @@ try:
     tunnel_line = tunnel_proc.stdout.readline()
     while not tunnel_line.startswith(b"Last login"):
         tunnel_line = tunnel_proc.stdout.readline()
-        if len(tunnel_line) > 0:
-            print("tunneling log:", tunnel_line)
     timeout_timer.cancel()
 except:
     print("Couldn't connect to tunnel - either an incorrect password or no internet.")

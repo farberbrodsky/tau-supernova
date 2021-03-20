@@ -13,4 +13,6 @@ python3 script.py --upload /path/to/folder
 python3 script.py --upload .
 # Connect to Nova and upload multiple folders.
 python3 script.py --upload /path/to/thing /path/to/other/stuff
+# Connect to Nova to run the automated testing script test.py
+python3 script.py --script test.py
 ```
