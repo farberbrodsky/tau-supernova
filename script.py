@@ -43,13 +43,13 @@ tunnel_proc = subprocess.Popen(
          auth_data["username"] + "@gate.tau.ac.il"],
         stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
 
-# if it takes more than 5 seconds to reach Last login, it's a failed attempt
+# if it takes more than 5 seconds to reach Welcome, it's a failed attempt
 timeout_timer = Timer(5, interrupt_main)
 
 try:
     timeout_timer.start()
     tunnel_line = tunnel_proc.stdout.readline()
-    while not tunnel_line.startswith(b"Last login"):
+    while not tunnel_line.startswith(b"Welcome"):
         tunnel_line = tunnel_proc.stdout.readline()
     timeout_timer.cancel()
 except:
