@@ -33,6 +33,7 @@ print(GREEN + "Compiled successfuly!" + RESET)
 
 
 def assert_eq(test_name, output, expected):
+    output = output.replace(b"\r\n", b"\n")
     if output != expected:
         print(
             RED + "FAILED", test_name, "expected",
